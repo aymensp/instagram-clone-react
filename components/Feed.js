@@ -1,3 +1,4 @@
+import MinProfile from "./MinProfile";
 import Posts from "./Posts";
 import Stories from "./Stories";
 
@@ -8,7 +9,11 @@ function Feed() {
         <Stories />
         <Posts />
       </section>
-      <section></section>
+      <section className="hidden xl:inline-grid  md:col-span-1">
+        <div className='fixed top-29 w-300'>
+          <MinProfile />
+        </div>
+      </section>
     </main>
   );
 }
