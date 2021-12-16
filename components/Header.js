@@ -7,7 +7,14 @@ import {
   PaperAirplaneIcon,
 } from "@heroicons/react/outline";
 import { HomeIcon } from "@heroicons/react/solid";
+import { useDispatch, useSelector } from "react-redux";
+import { getOpenModal, openModal } from "../slices/appSlice";
 function Header() {
+
+  const dispatch = useDispatch();
+  const setOpen = () => {
+    dispatch(openModal({ modal: true }));
+  }
   return (
     <div className=" shadow-md border-b bg-white sticky top-0 z-50">
       <div className="flex justify-between  max-w-6xl mx-5 xl:mx-auto  ">
@@ -45,7 +52,7 @@ function Header() {
               3
             </div>
           </div>
-          <PlusCircleIcon className="navButton" />
+          <PlusCircleIcon className="navButton" onClick={setOpen} />
           <UserGroupIcon className="navButton" />
           <HeartIcon className="navButton" />
           <img
